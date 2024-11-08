@@ -1,7 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Login from './screens/Login'
 import Register from './screens/Register'
-import WeatherApp from './screens/Weather'
 
 const router = createBrowserRouter([
   {
@@ -16,10 +15,6 @@ const router = createBrowserRouter([
         element: <Register />
       },
     ],
-  },
-  {
-    path: '/',
-    element: <WeatherApp />
   }
 ])
 
