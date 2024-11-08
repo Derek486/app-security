@@ -1,11 +1,28 @@
 import { Button, Input } from "@material-tailwind/react"
 import { Link, useNavigate } from "react-router-dom"
+import { useForm } from '../hooks/useForm.js'
+import { toast } from 'react-hot-toast'
+import api from "../api"
 
 export default function Register() {
+	const [form, handleForm] = useForm()
 	const navigate = useNavigate()
 
 	const register = () => {
-		navigate("/")
+		toast.promise(api.post('/api/register', form), {
+      loading: 'Loading',
+      success: 'Usuario registrado',
+      error: 'Error al registrar al usuario',
+    }).then((res) => {
+      if (res.status === 200) {
+        navigate("/auth/login")
+      }
+    }).catch((err) => {
+			console.log(err);
+			if (err.response.data) {
+				toast.error(err.response.data)
+			}
+    })
 	}
 
   return (
@@ -19,14 +36,23 @@ export default function Register() {
 					<Input 
 						label='DNI'
 						type='number'
+						name='dni'
 						size='lg'
+						maxLength={8}
 						color='white'
+						value={form.dni || ''}
+						onChange={handleForm}
+						required
 					/>
 					<Input 
 						label='Nombres'
+						name='nombre'
 						type='text'
 						size='lg'
 						color='white'
+						value={form.nombre || ''}
+						onChange={handleForm}
+						required
 					/>
 				</div>
 				<div className='flex flex-col gap-2'>
