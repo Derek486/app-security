@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import Login from './screens/Login'
 import Register from './screens/Register'
 import App from './screens/App'
+import Formulario from './screens/Formulario'
 const router = createBrowserRouter([
   {
     path: '/auth',
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: 'app',
     element: <App />
+  },
+  {
+    path: 'formulario',
+    element: <Formulario />
   }
 ])
 
