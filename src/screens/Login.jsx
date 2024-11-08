@@ -9,32 +9,27 @@ export default function Login() {
 	}
 
   return (
-    <div className="h-screen flex justify-center items-center bg-fondo_v1 bg-cover bg-no-repeat">
+    <div className="h-screen flex justify-center items-center bg-gray-900">
 			<div className="flex flex-col justify-center gap-8 backdrop-blur-lg p-8 rounded-md shadow-md text-inherit">
-				<h3 className='text-center text-blue-tecsup-100 text-2xl font-bold'>Partidos tecsup</h3>
+				<h3 className='text-center text-blue-400 text-2xl font-bold'>Security AQP</h3>
 				<div className="w-72 flex flex-col gap-4">
 					<Input 
-						label='Usuario (Email)'
-						type='email'
+						label='DNI'
+						type='number'
 						size='lg'
-						color='light-blue'
-					/>
-					<Input 
-						label='Contraseña'
-						type='password'
-						size='lg'
-						color='light-blue'
+						color='white'
 					/>
 				</div>
 				<div className='flex flex-col gap-2'>
-					<Button onClick={login} className='bg-blue-tecsup-200' type='submit' size='lg'>
+					<Button onClick={login} className='bg-blue-400' type='submit' size='md'>
 						Iniciar sesión
 					</Button>
-					<Link 
-						to={'partidos'}
-						className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm py-3.5 px-7 rounded-lg shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none gap-3 bg-smoke">
-						Ver partidos 
-					</Link>
+          <div className="flex justify-center gap-2 text-white">
+            <p>
+              ¿No tiene una cuenta? 
+            </p>
+            <Link to={'/auth/register'} className="text-blue-400 hover:text-blue-300 transition-colors">Registrar</Link>
+          </div>
 				</div>
 			</div>
     </div>
