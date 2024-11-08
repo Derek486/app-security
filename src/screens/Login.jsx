@@ -11,7 +11,10 @@ export default function Login() {
   return (
     <div className="h-screen flex justify-center items-center bg-gray-900">
 			<div className="flex flex-col justify-center gap-8 backdrop-blur-lg p-8 rounded-md shadow-md text-inherit">
-				<h3 className='text-center text-blue-400 text-2xl font-bold'>Security AQP</h3>
+				<header className="flex flex-col gap-2">
+					<h3 className='text-center text-blue-400 text-2xl font-bold'>Yanapay Sec</h3>
+					<p className="text-white text-center">Seguridad ciudadana</p>
+				</header>
 				<div className="w-72 flex flex-col gap-4">
 					<Input 
 						label='DNI'
